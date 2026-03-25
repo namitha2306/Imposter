@@ -38,6 +38,12 @@ function App() {
     setPhase('setup');
   };
 
+  const handleQuit = () => {
+    if (window.confirm("Are you sure you want to quit the current game? 🌸")) {
+      handlePlayAgain();
+    }
+  };
+
   return (
     <div className="app-container">
       {phase === 'setup' && (
@@ -52,15 +58,15 @@ function App() {
       )}
       
       {phase === 'assigning' && (
-        <PlayerPassScreen players={players} onFinishAssigning={handleFinishAssigning} />
+        <PlayerPassScreen players={players} onFinishAssigning={handleFinishAssigning} onQuit={handleQuit} />
       )}
 
       {phase === 'discussion' && (
-        <DiscussionScreen onProceed={handleProceedToVoting} />
+        <DiscussionScreen onProceed={handleProceedToVoting} onQuit={handleQuit} />
       )}
 
       {phase === 'voting' && (
-        <VotingScreen players={players} onVoteComplete={handleVoteComplete} />
+        <VotingScreen players={players} onVoteComplete={handleVoteComplete} onQuit={handleQuit} />
       )}
 
       {phase === 'result' && (

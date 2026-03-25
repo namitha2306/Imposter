@@ -49,7 +49,7 @@ export default function SetupScreen({ onStartGame, onOpenCustomWords }: SetupScr
   };
 
   return (
-    <div className="screen" style={{ position: 'relative', overflowY: 'auto' }}>
+    <div className="screen" style={{ position: 'relative', overflowY: 'auto', paddingBottom: '120px' }}>
       <h1 className="title">Kawaii<br />Imposter<br />Game</h1>
 
       <div className="input-group">
