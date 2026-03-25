@@ -18,16 +18,36 @@
   padding: 0;
 }
 
+html, body {
+  overscroll-behavior: none;
+}
+
 body {
   font-family: 'M PLUS Rounded 1c', 'Nunito', 'Poppins', sans-serif;
   background: radial-gradient(circle at 50% 50%, #FFF2F5 0%, #FFDFE5 100%);
   color: var(--text-main);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
   position: relative;
+}
+
+.category-pill {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-family: inherit;
+  font-weight: 700;
+  outline: none;
+}
+.category-pill:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--secondary) !important;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800;900&display=swap');
@@ -317,36 +337,59 @@ select:focus, input[type="number"]:focus {
 /* Mobile Optimization */
 @media (max-width: 480px) {
   .app-container {
-    padding: 16px;
+    padding: 8px;
   }
   .card {
-    padding: 32px 16px;
-    border-radius: 28px;
-    min-height: 400px;
+    padding: 16px 12px;
+    border-radius: 24px;
+    min-height: auto;
+    gap: 12px;
   }
   h1.title {
-    font-size: 28px !important;
+    font-size: 24px !important;
+    margin-bottom: 4px;
   }
-  .sticker-1 { left: -10px; top: -10px; font-size: 30px; }
-  .sticker-2 { right: -10px; bottom: -10px; font-size: 35px; }
-  .sticker-3 { right: -15px; font-size: 28px; }
-  .sticker-4 { left: -15px; font-size: 24px; }
+  .input-group {
+    gap: 4px;
+  }
+  .input-group label {
+    font-size: 12px;
+  }
+  select, input[type="number"] {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+  .sticker-1 { left: -5px; top: -5px; font-size: 24px; }
+  .sticker-2 { right: -5px; bottom: -5px; font-size: 28px; }
+  .sticker-3 { right: -10px; font-size: 22px; }
+  .sticker-4 { left: -10px; font-size: 20px; }
   .btn-primary {
-    font-size: 18px;
-    padding: 14px 20px;
+    font-size: 16px;
+    padding: 12px 16px;
+    margin-top: 4px !important;
+  }
+  .btn-secondary {
+    padding: 8px 14px;
+    font-size: 14px;
   }
   .timer {
-    font-size: 48px;
+    font-size: 40px;
+    margin: 12px 0;
+  }
+  .category-pill {
+    padding: 4px 10px;
+    font-size: 12px;
   }
 }
 @media (max-width: 360px) {
   h1.title {
-    font-size: 24px !important;
-  }
-  .card {
-    min-height: 380px;
+    font-size: 22px !important;
   }
   .kawaii-emoji {
-    font-size: 48px;
+    font-size: 40px;
+  }
+  select, input[type="number"] {
+    padding: 6px 10px;
   }
 }

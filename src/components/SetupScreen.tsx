@@ -99,14 +99,11 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
             <button
               key={cat}
               onClick={() => toggleCategory(cat)}
-              className="btn-secondary"
+              className="category-pill"
               style={{
-                padding: '8px 16px',
-                fontSize: '14px',
                 background: selectedCategories.includes(cat) ? 'var(--primary)' : 'var(--card-bg)',
                 color: selectedCategories.includes(cat) ? 'white' : 'var(--text-main)',
                 border: `2px solid var(--primary)`,
-                borderRadius: '20px',
                 boxShadow: selectedCategories.includes(cat) ? '0 4px 0 var(--primary-dark)' : '0 4px 0 var(--secondary)'
               }}
             >
