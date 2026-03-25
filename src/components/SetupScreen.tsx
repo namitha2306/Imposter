@@ -6,17 +6,20 @@ interface SetupScreenProps {
 }
 
 export default function SetupScreen({ onStartGame }: SetupScreenProps) {
-  const [players, setPlayers] = useState(4);
-  const [imposters, setImposters] = useState(1);
+  const [players, setPlayers] = useState<number | ''>(4);
+  const [imposters, setImposters] = useState<number | ''>(1);
   const [difficulty, setDifficulty] = useState<Difficulty>('medium');
 
+  const pCount = typeof players === 'number' ? players : 3;
+  const maxImposters = Math.max(1, pCount - 1);
+  
   const handleStart = () => {
-    onStartGame(players, imposters, difficulty);
+    const finalPlayers = Math.max(3, Math.min(12, pCount));
+    let iCount = typeof imposters === 'number' ? imposters : 1;
+    // ensure imposters is between 1 and maxImposters
+    iCount = Math.max(1, Math.min(iCount, finalPlayers - 1));
+    onStartGame(finalPlayers, iCount, difficulty);
   };
-
-  // Adjust imposter max based on player count
-  const maxImposters = players - 1;
-  const safeImposters = Math.min(imposters, maxImposters);
 
   return (
     <div className="card animate-pop">
@@ -33,9 +36,14 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
           max={12} 
           value={players} 
           onChange={(e) => {
-            const p = parseInt(e.target.value) || 3;
-            setPlayers(p);
-            if (imposters >= p) setImposters(p - 1);
+            const val = e.target.value;
+            if (val === '') {
+              setPlayers('');
+            } else {
+              const num = parseInt(val);
+              setPlayers(num);
+              // Don't auto-correct imposters here aggressively if they are typing
+            }
           }} 
         />
       </div>
@@ -46,8 +54,15 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
           type="number" 
           min={1} 
           max={maxImposters} 
-          value={safeImposters} 
-          onChange={(e) => setImposters(parseInt(e.target.value) || 1)} 
+          value={imposters} 
+          onChange={(e) => {
+            const val = e.target.value;
+            if (val === '') {
+              setImposters('');
+            } else {
+              setImposters(parseInt(val));
+            }
+          }} 
         />
       </div>
 

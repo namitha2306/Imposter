@@ -313,3 +313,40 @@ select:focus, input[type="number"]:focus {
   animation: imposter-shake 0.5s infinite linear;
   font-size: 90px;
 }
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 16px;
+  }
+  .card {
+    padding: 32px 16px;
+    border-radius: 28px;
+    min-height: 400px;
+  }
+  h1.title {
+    font-size: 28px !important;
+  }
+  .sticker-1 { left: -10px; top: -10px; font-size: 30px; }
+  .sticker-2 { right: -10px; bottom: -10px; font-size: 35px; }
+  .sticker-3 { right: -15px; font-size: 28px; }
+  .sticker-4 { left: -15px; font-size: 24px; }
+  .btn-primary {
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+  .timer {
+    font-size: 48px;
+  }
+}
+@media (max-width: 360px) {
+  h1.title {
+    font-size: 24px !important;
+  }
+  .card {
+    min-height: 380px;
+  }
+  .kawaii-emoji {
+    font-size: 48px;
+  }
+}
