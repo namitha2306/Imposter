@@ -49,7 +49,7 @@ export default function SetupScreen({ onStartGame, onOpenCustomWords }: SetupScr
   };
 
   return (
-    <div className="screen" style={{ position: 'relative', overflowY: 'auto', paddingBottom: '120px' }}>
+    <div className="screen" style={{ position: 'relative' }}>
       <h1 className="title">Kawaii<br />Imposter<br />Game</h1>
 
       <div className="input-group">
@@ -151,6 +151,9 @@ export default function SetupScreen({ onStartGame, onOpenCustomWords }: SetupScr
           </div>
         </div>
       )}
+
+      {/* spacer to prevent fixed button overlap on all devices */}
+      <div style={{ height: '140px', width: '100%', flexShrink: 0 }} />
 
       <button className="btn-primary" onClick={handleStart}>
         Start Game 🌸
