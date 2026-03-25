@@ -1,18 +1,28 @@
-import { useState } from 'react';
-import type { Difficulty } from '../types';
+import { useState, useEffect } from 'react';
+import type { Difficulty, WordGroup } from '../types';
+import { getAllWords } from '../utils/gameLogic';
 
 interface SetupScreenProps {
   onStartGame: (players: number, imposters: number, difficulty: Difficulty, categories: string[]) => void;
+  onOpenCustomWords: () => void;
 }
 
-const ALL_CATEGORIES = ['Food', 'Places', 'Objects', 'Nature', 'Friends', 'Malayalam Movies', 'Actors', 'Monuments', 'Cartoons'];
-
-export default function SetupScreen({ onStartGame }: SetupScreenProps) {
+export default function SetupScreen({ onStartGame, onOpenCustomWords }: SetupScreenProps) {
   const [players, setPlayers] = useState<number | ''>(4);
   const [imposters, setImposters] = useState<number | ''>(1);
   const [difficulty, setDifficulty] = useState<Difficulty>('medium');
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(ALL_CATEGORIES);
+  const [availableCategories, setAvailableCategories] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [showError, setShowError] = useState(false);
+
+  // Load dynamic categories including localStorage
+  useEffect(() => {
+    const allWords = getAllWords();
+    const uniqueCats = Array.from(new Set(allWords.map((w: WordGroup) => w.category))) as string[];
+    setAvailableCategories(uniqueCats);
+    // Select all by default the first time it loads
+    setSelectedCategories(uniqueCats);
+  }, []);
 
   const pCount = typeof players === 'number' ? players : 0;
   const iCount = typeof imposters === 'number' ? imposters : 0;
@@ -39,11 +49,8 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
   };
 
   return (
-    <div className="card animate-pop" style={{ position: 'relative', overflow: 'hidden' }}>
-      <div className="sticker sticker-1">⛩️</div>
-      <div className="sticker sticker-2">🍵</div>
-      <div className="sticker sticker-3">🎎</div>
-      <h1 className="title animate-bounce">Imposterne<br />Kand Pidik</h1>
+    <div className="screen" style={{ position: 'relative', overflowY: 'auto' }}>
+      <h1 className="title">Kawaii<br />Imposter<br />Game</h1>
 
       <div className="input-group">
         <label>Number of Players</label>
@@ -94,14 +101,15 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
 
       <div className="input-group">
         <label>Categories (カテゴリ)</label>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-          {ALL_CATEGORIES.map(cat => (
+        <div className="categories-container" style={{ marginBottom: '16px' }}>
+          {availableCategories.map(cat => (
             <button
               key={cat}
+              type="button"
               onClick={() => toggleCategory(cat)}
               className="category-pill"
               style={{
-                background: selectedCategories.includes(cat) ? 'var(--primary)' : 'var(--card-bg)',
+                background: selectedCategories.includes(cat) ? 'var(--primary)' : 'var(--surface)',
                 color: selectedCategories.includes(cat) ? 'white' : 'var(--text-main)',
                 border: `2px solid var(--primary)`,
                 boxShadow: selectedCategories.includes(cat) ? '0 4px 0 var(--primary-dark)' : '0 4px 0 var(--secondary)'
@@ -111,35 +119,40 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
             </button>
           ))}
         </div>
+        <button 
+          type="button" 
+          className="btn-secondary" 
+          onClick={onOpenCustomWords}
+          style={{ background: 'transparent', border: '2px dashed var(--primary)', color: 'var(--primary-dark)', padding: '12px' }}
+        >
+          ➕ Inside-Joke Deck
+        </button>
       </div>
 
       {showError && (
         <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(5px)',
-          zIndex: 100, display: 'flex', flexDirection: 'column',
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(10px)',
+          zIndex: 2000, display: 'flex', flexDirection: 'column',
           justifyContent: 'center', alignItems: 'center', padding: '24px'
         }}>
           <div className="animate-pop" style={{
-            background: 'var(--card-bg)', border: '4px solid var(--primary)',
-            padding: '24px', borderRadius: '24px', textAlign: 'center',
-            boxShadow: '0 8px 30px rgba(0,0,0,0.1)'
+            background: 'var(--surface)', border: 'none',
+            padding: '32px 24px', borderRadius: '32px', textAlign: 'center',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.1)', width: '100%'
           }}>
-            <h2 style={{ color: 'var(--primary-dark)', marginBottom: '16px', fontSize: '28px' }}>Oops! 🙈</h2>
-            <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: '8px', color: 'var(--text-main)' }}>
+            <h2 style={{ color: 'var(--primary-dark)', marginBottom: '16px', fontSize: '32px' }}>Oops! 🙈</h2>
+            <p style={{ fontWeight: 'bold', fontSize: '20px', marginBottom: '12px', color: 'var(--text-main)' }}>
               {pCount < 3 ? 'You need at least 3 players to play!' : `Max Imposters for ${pCount} players is ${maxImposters}.`}
             </p>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '24px', fontSize: '14px' }}>
-              Please correct the numbers so the game is fair and fun!
-            </p>
-            <button className="btn-secondary" onClick={() => setShowError(false)}>
+            <button type="button" className="btn-secondary" onClick={() => setShowError(false)} style={{marginTop: '20px'}}>
               Got it! 🌸
             </button>
           </div>
         </div>
       )}
 
-      <button className="btn-primary" onClick={handleStart} style={{ marginTop: '16px' }}>
+      <button className="btn-primary" onClick={handleStart}>
         Start Game 🌸
       </button>
     </div>

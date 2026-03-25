@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SetupScreen from './components/SetupScreen';
+import CustomWordScreen from './components/CustomWordScreen';
 import PlayerPassScreen from './components/PlayerPassScreen';
 import DiscussionScreen from './components/DiscussionScreen';
 import VotingScreen from './components/VotingScreen';
@@ -40,7 +41,14 @@ function App() {
   return (
     <div className="app-container">
       {phase === 'setup' && (
-        <SetupScreen onStartGame={handleStartGame} />
+        <SetupScreen 
+          onStartGame={handleStartGame} 
+          onOpenCustomWords={() => setPhase('custom-words')}
+        />
+      )}
+      
+      {phase === 'custom-words' && (
+        <CustomWordScreen onClose={() => setPhase('setup')} />
       )}
       
       {phase === 'assigning' && (

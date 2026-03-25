@@ -3,6 +3,20 @@ import type { WordGroup, Player, Difficulty } from '../types';
 
 const wordData: { words: WordGroup[] } = wordDataRaw;
 
+export function getAllWords(): WordGroup[] {
+  const baseWords = wordData.words;
+  let customWords: WordGroup[] = [];
+  try {
+    const saved = localStorage.getItem('kawaii_custom_words');
+    if (saved) {
+      customWords = JSON.parse(saved);
+    }
+  } catch (e) {
+    console.error('Failed to parse custom words', e);
+  }
+  return [...baseWords, ...customWords];
+}
+
 /** Shuffles an array in place using Fisher-Yates */
 export function shuffleArray<T>(array: T[]): T[] {
   const newArr = [...array];
@@ -20,14 +34,15 @@ export function generateGameData(
   categories: string[]
 ): Player[] {
   // 1. Filter word data by selected categories
-  let availableWords = wordData.words;
+  const allWords = getAllWords();
+  let availableWords = allWords;
   if (categories && categories.length > 0) {
-    availableWords = wordData.words.filter(w => categories.includes(w.category));
+    availableWords = allWords.filter(w => categories.includes(w.category));
   }
   
   // Fallback if no words match (shouldn't happen)
   if (availableWords.length === 0) {
-    availableWords = wordData.words;
+    availableWords = allWords;
   }
 
   // 2. Pick a random word group

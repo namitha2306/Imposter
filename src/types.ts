@@ -9,7 +9,7 @@ export interface Player {
   word: string;
 }
 
-export type GamePhase = 'setup' | 'assigning' | 'discussion' | 'voting' | 'result';
+export type GamePhase = 'setup' | 'custom-words' | 'assigning' | 'discussion' | 'voting' | 'result';
 
 export interface WordGroup {
   category: string;
