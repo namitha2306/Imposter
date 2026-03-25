@@ -28,8 +28,7 @@ export default function PlayerPassScreen({ players, onFinishAssigning }: PlayerP
   };
 
   return (
-    <div className="card animate-pop" key={currentPlayerIndex + (showWord ? 'show' : 'hide')}>
-      <div className="sticker sticker-2">🤫</div>
+    <div className="screen" key={currentPlayerIndex + (showWord ? 'show' : 'hide')}>
       <div className="kawaii-emoji animate-bounce">
         {showWord ? '👀' : '📱'}
       </div>

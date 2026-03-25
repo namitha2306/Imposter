@@ -5,7 +5,7 @@ interface SetupScreenProps {
   onStartGame: (players: number, imposters: number, difficulty: Difficulty, categories: string[]) => void;
 }
 
-const ALL_CATEGORIES = ['Food', 'Places', 'Objects', 'Nature', 'Friends'];
+const ALL_CATEGORIES = ['Food', 'Places', 'Objects', 'Nature', 'Friends', 'Malayalam Movies', 'Actors', 'Monuments', 'Cartoons'];
 
 export default function SetupScreen({ onStartGame }: SetupScreenProps) {
   const [players, setPlayers] = useState<number | ''>(4);
@@ -20,7 +20,7 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
   // Scales up to 100: 3-6 -> 1, 7-12 -> 2, etc. (Default to 1 if pCount < 3)
   const maxImposters = pCount >= 3 ? Math.floor((pCount - 1) / 6) + 1 : 1;
   const isValid = pCount >= 3 && pCount <= 100 && iCount >= 1 && iCount <= maxImposters;
-  
+
   const handleStart = () => {
     if (!isValid) {
       setShowError(true);
@@ -43,15 +43,15 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
       <div className="sticker sticker-1">⛩️</div>
       <div className="sticker sticker-2">🍵</div>
       <div className="sticker sticker-3">🎎</div>
-      <h1 className="title animate-bounce">Kawaii<br/>Imposter<br/>Game</h1>
-      
+      <h1 className="title animate-bounce">Imposterne<br />Kand Pidik</h1>
+
       <div className="input-group">
         <label>Number of Players</label>
-        <input 
-          type="number" 
-          min={3} 
-          max={100} 
-          value={players} 
+        <input
+          type="number"
+          min={3}
+          max={100}
+          value={players}
           onChange={(e) => {
             const val = e.target.value;
             if (val === '') {
@@ -61,17 +61,17 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
               setPlayers(num);
               // Don't auto-correct imposters here aggressively if they are typing
             }
-          }} 
+          }}
         />
       </div>
 
       <div className="input-group">
         <label>Number of Imposters</label>
-        <input 
-          type="number" 
-          min={1} 
-          max={maxImposters} 
-          value={imposters} 
+        <input
+          type="number"
+          min={1}
+          max={maxImposters}
+          value={imposters}
           onChange={(e) => {
             const val = e.target.value;
             if (val === '') {
@@ -79,7 +79,7 @@ export default function SetupScreen({ onStartGame }: SetupScreenProps) {
             } else {
               setImposters(parseInt(val));
             }
-          }} 
+          }}
         />
       </div>
 

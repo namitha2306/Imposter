@@ -30,18 +30,16 @@ export default function DiscussionScreen({ onProceed }: DiscussionScreenProps) {
   };
 
   return (
-    <div className="card animate-pop">
-      <div className="sticker sticker-1">💭</div>
-      <div className="sticker sticker-4">🔍</div>
+    <div className="screen" style={{ justifyContent: 'center', alignItems: 'center' }}>
       <div className="kawaii-emoji animate-think">🤔</div>
-      <h1 className="title" style={{fontSize: '28px'}}>Discussion Time</h1>
-      <p style={{ color: 'var(--text-muted)' }}>Find out who has the different word!</p>
+      <h1 className="title" style={{fontSize: '32px', textAlign: 'center'}}>Discussion Time</h1>
+      <p style={{ color: 'var(--text-muted)', textAlign: 'center' }}>Find out who has the different word!</p>
       
       <div className="timer">
         {formatTime(timeLeft)}
       </div>
 
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', gap: '12px', marginBottom: '40px', width: '100%' }}>
         <button className="btn-secondary" onClick={toggleTimer}>
           {isActive ? 'Pause' : 'Start Timer'}
         </button>

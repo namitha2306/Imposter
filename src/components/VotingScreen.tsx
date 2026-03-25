@@ -28,16 +28,14 @@ export default function VotingScreen({ players, onVoteComplete }: VotingScreenPr
   };
 
   return (
-    <div className="card animate-pop" key={voterIndex}>
-      <div className="sticker sticker-1">🎯</div>
-      <div className="sticker sticker-3">🗳️</div>
+    <div className="screen" key={voterIndex}>
       <div className="kawaii-emoji animate-bounce">🤔</div>
-      <h2 style={{ margin: '10px 0' }}>{currentVoter.name}'s turn</h2>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+      <h2 style={{ margin: '10px 0', textAlign: 'center' }}>{currentVoter.name}'s turn</h2>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '20px', textAlign: 'center' }}>
         Who do you think is the imposter?
       </p>
 
-      <div className="player-list">
+      <div className="player-list" style={{ paddingBottom: '80px' }}>
         {players.map(p => {
           // Cannot vote for self
           if (p.id === currentVoter.id) return null;
@@ -58,7 +56,6 @@ export default function VotingScreen({ players, onVoteComplete }: VotingScreenPr
         className="btn-primary" 
         onClick={handleVote}
         disabled={!selectedSuspect}
-        style={{ marginTop: '24px' }}
       >
         Confirm Vote 🎯
       </button>

@@ -167,6 +167,83 @@
       "easy": ["Friend", "Girl", "Person"],
       "medium": ["Hira", "Sona", "Mariya"],
       "hard": ["Namitha", "Athira", "Ashitha", "Omal"]
+    },
+    {
+      "category": "Malayalam Movies",
+      "main": "Premam",
+      "easy": ["Bangalore Days", "Neram"],
+      "medium": ["Kumbalangi Nights", "Manjummel Boys"],
+      "hard": ["Drishyam", "Lucifer"]
+    },
+    {
+      "category": "Malayalam Movies",
+      "main": "Manjummel Boys",
+      "easy": ["Aavesham", "Premalu"],
+      "medium": ["Kumbalangi Nights", "Romancham"],
+      "hard": ["Bangalore Days", "Premam"]
+    },
+    {
+      "category": "Malayalam Movies",
+      "main": "Drishyam",
+      "easy": ["Memories", "Papanasam"],
+      "medium": ["Lucifer", "Neram"],
+      "hard": ["Premam", "Kumbalangi Nights"]
+    },
+    {
+      "category": "Actors",
+      "main": "Mohanlal",
+      "easy": ["Mammootty", "Fahadh Faasil"],
+      "medium": ["Dulquer Salmaan", "Nivin Pauly"],
+      "hard": ["Prithviraj", "Tovino Thomas"]
+    },
+    {
+      "category": "Actors",
+      "main": "Mammootty",
+      "easy": ["Mohanlal", "Dulquer Salmaan"],
+      "medium": ["Fahadh Faasil", "Nivin Pauly"],
+      "hard": ["Prithviraj", "Tovino Thomas"]
+    },
+    {
+      "category": "Actors",
+      "main": "Fahadh Faasil",
+      "easy": ["Dulquer Salmaan", "Nivin Pauly"],
+      "medium": ["Mohanlal", "Mammootty"],
+      "hard": ["Tovino Thomas", "Prithviraj"]
+    },
+    {
+      "category": "Monuments",
+      "main": "Taj Mahal",
+      "easy": ["Eiffel Tower", "Statue of Liberty"],
+      "medium": ["Great Wall", "Colosseum"],
+      "hard": ["Pyramids", "Big Ben"]
+    },
+    {
+      "category": "Monuments",
+      "main": "Eiffel Tower",
+      "easy": ["Big Ben", "Statue of Liberty"],
+      "medium": ["Colosseum", "Taj Mahal"],
+      "hard": ["Great Wall", "Pyramids"]
+    },
+    {
+      "category": "Cartoons",
+      "main": "Mickey Mouse",
+      "easy": ["Donald Duck", "Goofy"],
+      "medium": ["Bugs Bunny", "Tom"],
+      "hard": ["Jerry", "SpongeBob"]
+    },
+    {
+      "category": "Cartoons",
+      "main": "Doraemon",
+      "easy": ["Nobita", "Shinchan"],
+      "medium": ["Pikachu", "Goku"],
+      "hard": ["Naruto", "SpongeBob"]
+    },
+    {
+      "category": "Cartoons",
+      "main": "Tom",
+      "easy": ["Jerry", "Spike"],
+      "medium": ["Mickey Mouse", "Bugs Bunny"],
+      "hard": ["Donald Duck", "Doraemon"]
     }
   ]
 }

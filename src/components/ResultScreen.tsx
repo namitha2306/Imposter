@@ -19,9 +19,9 @@ export default function ResultScreen({ players, votes, onPlayAgain }: ResultScre
   // Check if any imposter got eliminated
   const imposters = players.filter(p => p.role === 'imposter');
   const impostersEliminated = imposters.some(imp => eliminatedPlayerIds.includes(imp.id));
-  
+
   const civiliansWin = impostersEliminated;
-  
+
   const mainWord = players.find(p => p.role === 'civilian')?.word || '';
   const imposterWord = imposters[0]?.word || '';
 
@@ -34,7 +34,7 @@ export default function ResultScreen({ players, votes, onPlayAgain }: ResultScre
         </>
       ) : (
         <>
-          <div className="sticker sticker-1" style={{filter: 'hue-rotate(180deg)'}}>👻</div>
+          <div className="sticker sticker-1" style={{ filter: 'hue-rotate(180deg)' }}>👻</div>
           <div className="sticker sticker-3">🔥</div>
         </>
       )}
@@ -59,8 +59,8 @@ export default function ResultScreen({ players, votes, onPlayAgain }: ResultScre
       <div className="player-list" style={{ marginBottom: '24px' }}>
         {imposters.map(imp => (
           <div key={imp.id} style={{
-            background: 'var(--secondary)', 
-            padding: '12px', 
+            background: 'var(--secondary)',
+            padding: '12px',
             borderRadius: '12px',
             fontWeight: 'bold',
             display: 'flex',
