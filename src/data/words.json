@@ -1,0 +1,94 @@
+{
+  "words": [
+    {
+      "main": "Muffin",
+      "easy": ["Coffee", "Breakfast", "Bakery"],
+      "medium": ["Pancake", "Waffle", "Croissant"],
+      "hard": ["Cupcake", "Brownie", "Scone"]
+    },
+    {
+      "main": "Ocean",
+      "easy": ["Fish", "Boat", "Summer"],
+      "medium": ["River", "Lake", "Pool"],
+      "hard": ["Sea", "Beach", "Water"]
+    },
+    {
+      "main": "Smartphone",
+      "easy": ["Internet", "App", "Screen"],
+      "medium": ["Computer", "Laptop", "Watch"],
+      "hard": ["Telephone", "Tablet", "Phablet"]
+    },
+    {
+      "main": "Moon",
+      "easy": ["Sleep", "Glow", "Space"],
+      "medium": ["Sun", "Planet", "Cloud"],
+      "hard": ["Star", "Night", "Eclipse"]
+    },
+    {
+      "main": "Guitar",
+      "easy": ["Wood", "Song", "Band"],
+      "medium": ["Piano", "Drums", "Flute"],
+      "hard": ["Violin", "Bass", "Ukulele"]
+    },
+    {
+      "main": "Apple",
+      "easy": ["Tree", "Seed", "Juice"],
+      "medium": ["Banana", "Orange", "Watermelon"],
+      "hard": ["Pear", "Peach", "Plum"]
+    },
+    {
+      "main": "Hospital",
+      "easy": ["Ambulance", "Sick", "Medicine"],
+      "medium": ["Dentist", "Pharmacy", "Laboratory"],
+      "hard": ["Clinic", "Doctor", "Nurse"]
+    },
+    {
+      "main": "Car",
+      "easy": ["Road", "Wheel", "Drive"],
+      "medium": ["Motorcycle", "Bicycle", "Train"],
+      "hard": ["Truck", "Van", "Bus"]
+    },
+    {
+      "main": "Cat",
+      "easy": ["Tail", "Meow", "Pet"],
+      "medium": ["Dog", "Hamster", "Bunny"],
+      "hard": ["Kitten", "Lion", "Tiger"]
+    },
+    {
+      "main": "Pizza",
+      "easy": ["Delivery", "Dinner", "Italian"],
+      "medium": ["Burger", "Taco", "Hotdog"],
+      "hard": ["Pasta", "Lasagna", "Calzone"]
+    },
+    {
+      "main": "Jacket",
+      "easy": ["Winter", "Cold", "Zipper"],
+      "medium": ["Pants", "Shoes", "Hat"],
+      "hard": ["Coat", "Sweater", "Hoodie"]
+    },
+    {
+      "main": "Library",
+      "easy": ["Quiet", "Read", "Study"],
+      "medium": ["School", "Museum", "Theater"],
+      "hard": ["Bookstore", "Archive", "Classroom"]
+    },
+    {
+      "main": "Coffee",
+      "easy": ["Morning", "Mug", "Energy"],
+      "medium": ["Juice", "Water", "Soda"],
+      "hard": ["Tea", "Espresso", "Latte"]
+    },
+    {
+      "main": "Glasses",
+      "easy": ["Eyes", "Vision", "Read"],
+      "medium": ["Hat", "Watch", "Scarf"],
+      "hard": ["Goggles", "Sunglasses", "Lenses"]
+    },
+    {
+      "main": "Chair",
+      "easy": ["Sit", "Wood", "Rest"],
+      "medium": ["Table", "Bed", "Desk"],
+      "hard": ["Stool", "Sofa", "Bench"]
+    }
+  ]
+}
