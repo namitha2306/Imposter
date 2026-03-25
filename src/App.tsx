@@ -12,8 +12,8 @@ function App() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [votes, setVotes] = useState<Record<string, string>>({});
 
-  const handleStartGame = (playerCount: number, imposterCount: number, difficulty: Difficulty) => {
-    const gameData = generateGameData(playerCount, imposterCount, difficulty);
+  const handleStartGame = (playerCount: number, imposterCount: number, difficulty: Difficulty, categories: string[]) => {
+    const gameData = generateGameData(playerCount, imposterCount, difficulty, categories);
     setPlayers(gameData);
     setPhase('assigning');
   };

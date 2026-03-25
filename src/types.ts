@@ -12,6 +12,7 @@ export interface Player {
 export type GamePhase = 'setup' | 'assigning' | 'discussion' | 'voting' | 'result';
 
 export interface WordGroup {
+  category: string;
   main: string;
   easy: string[];
   medium: string[];

@@ -16,18 +16,30 @@ export function shuffleArray<T>(array: T[]): T[] {
 export function generateGameData(
   playerCount: number,
   imposterCount: number,
-  difficulty: Difficulty
+  difficulty: Difficulty,
+  categories: string[]
 ): Player[] {
-  // 1. Pick a random word group
-  const groupIndex = Math.floor(Math.random() * wordData.words.length);
-  const group = wordData.words[groupIndex];
+  // 1. Filter word data by selected categories
+  let availableWords = wordData.words;
+  if (categories && categories.length > 0) {
+    availableWords = wordData.words.filter(w => categories.includes(w.category));
+  }
+  
+  // Fallback if no words match (shouldn't happen)
+  if (availableWords.length === 0) {
+    availableWords = wordData.words;
+  }
 
-  // 2. Pick the main word and an imposter word based on difficulty
+  // 2. Pick a random word group
+  const groupIndex = Math.floor(Math.random() * availableWords.length);
+  const group = availableWords[groupIndex];
+
+  // 3. Pick the main word and an imposter word based on difficulty
   const mainWord = group.main;
   const imposterWordsList = group[difficulty];
   const imposterWord = imposterWordsList[Math.floor(Math.random() * imposterWordsList.length)];
 
-  // 3. Create players array with assigned roles
+  // 4. Create players array with assigned roles
   const players: Player[] = [];
   
   // Add imposters
@@ -50,11 +62,9 @@ export function generateGameData(
     });
   }
 
-  // 4. Shuffle the players
+  // 5. Shuffle the players
   const shuffled = shuffleArray(players);
   
-  // 5. Re-assign generic names to hide original insert order optionally, 
-  // though just keeping the shuffled array and assigning name based on new index is better.
   return shuffled.map((p, index) => ({
     ...p,
     id: `player-${index + 1}`,

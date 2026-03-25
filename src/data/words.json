@@ -1,94 +1,172 @@
 {
   "words": [
     {
+      "category": "Food",
       "main": "Muffin",
       "easy": ["Coffee", "Breakfast", "Bakery"],
       "medium": ["Pancake", "Waffle", "Croissant"],
       "hard": ["Cupcake", "Brownie", "Scone"]
     },
     {
-      "main": "Ocean",
-      "easy": ["Fish", "Boat", "Summer"],
-      "medium": ["River", "Lake", "Pool"],
-      "hard": ["Sea", "Beach", "Water"]
-    },
-    {
-      "main": "Smartphone",
-      "easy": ["Internet", "App", "Screen"],
-      "medium": ["Computer", "Laptop", "Watch"],
-      "hard": ["Telephone", "Tablet", "Phablet"]
-    },
-    {
-      "main": "Moon",
-      "easy": ["Sleep", "Glow", "Space"],
-      "medium": ["Sun", "Planet", "Cloud"],
-      "hard": ["Star", "Night", "Eclipse"]
-    },
-    {
-      "main": "Guitar",
-      "easy": ["Wood", "Song", "Band"],
-      "medium": ["Piano", "Drums", "Flute"],
-      "hard": ["Violin", "Bass", "Ukulele"]
-    },
-    {
-      "main": "Apple",
-      "easy": ["Tree", "Seed", "Juice"],
-      "medium": ["Banana", "Orange", "Watermelon"],
-      "hard": ["Pear", "Peach", "Plum"]
-    },
-    {
-      "main": "Hospital",
-      "easy": ["Ambulance", "Sick", "Medicine"],
-      "medium": ["Dentist", "Pharmacy", "Laboratory"],
-      "hard": ["Clinic", "Doctor", "Nurse"]
-    },
-    {
-      "main": "Car",
-      "easy": ["Road", "Wheel", "Drive"],
-      "medium": ["Motorcycle", "Bicycle", "Train"],
-      "hard": ["Truck", "Van", "Bus"]
-    },
-    {
-      "main": "Cat",
-      "easy": ["Tail", "Meow", "Pet"],
-      "medium": ["Dog", "Hamster", "Bunny"],
-      "hard": ["Kitten", "Lion", "Tiger"]
-    },
-    {
+      "category": "Food",
       "main": "Pizza",
       "easy": ["Delivery", "Dinner", "Italian"],
       "medium": ["Burger", "Taco", "Hotdog"],
       "hard": ["Pasta", "Lasagna", "Calzone"]
     },
     {
-      "main": "Jacket",
-      "easy": ["Winter", "Cold", "Zipper"],
-      "medium": ["Pants", "Shoes", "Hat"],
-      "hard": ["Coat", "Sweater", "Hoodie"]
+      "category": "Food",
+      "main": "Apple",
+      "easy": ["Tree", "Seed", "Juice"],
+      "medium": ["Banana", "Orange", "Watermelon"],
+      "hard": ["Pear", "Peach", "Plum"]
     },
     {
-      "main": "Library",
-      "easy": ["Quiet", "Read", "Study"],
-      "medium": ["School", "Museum", "Theater"],
-      "hard": ["Bookstore", "Archive", "Classroom"]
-    },
-    {
+      "category": "Food",
       "main": "Coffee",
       "easy": ["Morning", "Mug", "Energy"],
       "medium": ["Juice", "Water", "Soda"],
       "hard": ["Tea", "Espresso", "Latte"]
     },
     {
+      "category": "Places",
+      "main": "Hospital",
+      "easy": ["Ambulance", "Sick", "Medicine"],
+      "medium": ["Dentist", "Pharmacy", "Laboratory"],
+      "hard": ["Clinic", "Doctor", "Nurse"]
+    },
+    {
+      "category": "Places",
+      "main": "Library",
+      "easy": ["Quiet", "Read", "Study"],
+      "medium": ["School", "Museum", "Theater"],
+      "hard": ["Bookstore", "Archive", "Classroom"]
+    },
+    {
+      "category": "Objects",
+      "main": "Smartphone",
+      "easy": ["Internet", "App", "Screen"],
+      "medium": ["Computer", "Laptop", "Watch"],
+      "hard": ["Telephone", "Tablet", "Phablet"]
+    },
+    {
+      "category": "Objects",
+      "main": "Guitar",
+      "easy": ["Wood", "Song", "Band"],
+      "medium": ["Piano", "Drums", "Flute"],
+      "hard": ["Violin", "Bass", "Ukulele"]
+    },
+    {
+      "category": "Objects",
+      "main": "Car",
+      "easy": ["Road", "Wheel", "Drive"],
+      "medium": ["Motorcycle", "Bicycle", "Train"],
+      "hard": ["Truck", "Van", "Bus"]
+    },
+    {
+      "category": "Objects",
+      "main": "Jacket",
+      "easy": ["Winter", "Cold", "Zipper"],
+      "medium": ["Pants", "Shoes", "Hat"],
+      "hard": ["Coat", "Sweater", "Hoodie"]
+    },
+    {
+      "category": "Objects",
       "main": "Glasses",
       "easy": ["Eyes", "Vision", "Read"],
       "medium": ["Hat", "Watch", "Scarf"],
       "hard": ["Goggles", "Sunglasses", "Lenses"]
     },
     {
+      "category": "Objects",
       "main": "Chair",
       "easy": ["Sit", "Wood", "Rest"],
       "medium": ["Table", "Bed", "Desk"],
       "hard": ["Stool", "Sofa", "Bench"]
+    },
+    {
+      "category": "Nature",
+      "main": "Ocean",
+      "easy": ["Fish", "Boat", "Summer"],
+      "medium": ["River", "Lake", "Pool"],
+      "hard": ["Sea", "Beach", "Water"]
+    },
+    {
+      "category": "Nature",
+      "main": "Moon",
+      "easy": ["Sleep", "Glow", "Space"],
+      "medium": ["Sun", "Planet", "Cloud"],
+      "hard": ["Star", "Night", "Eclipse"]
+    },
+    {
+      "category": "Nature",
+      "main": "Cat",
+      "easy": ["Tail", "Meow", "Pet"],
+      "medium": ["Dog", "Hamster", "Bunny"],
+      "hard": ["Kitten", "Lion", "Tiger"]
+    },
+    {
+      "category": "Nature",
+      "main": "Mountain",
+      "easy": ["Climb", "Snow", "Tall"],
+      "medium": ["Hill", "Valley", "Rock"],
+      "hard": ["Volcano", "Cliff", "Peak"]
+    },
+    {
+      "category": "Friends",
+      "main": "Namitha",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Sona", "Farha", "Mariya"],
+      "hard": ["Athira", "Ashitha", "Omal", "Hira"]
+    },
+    {
+      "category": "Friends",
+      "main": "Athira",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Namitha", "Ashitha", "Hira"],
+      "hard": ["Omal", "Sona", "Farha", "Mariya"]
+    },
+    {
+      "category": "Friends",
+      "main": "Mariya",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Athira", "Omal", "Sona"],
+      "hard": ["Namitha", "Ashitha", "Hira", "Farha"]
+    },
+    {
+      "category": "Friends",
+      "main": "Ashitha",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Farha", "Hira", "Mariya"],
+      "hard": ["Namitha", "Athira", "Omal", "Sona"]
+    },
+    {
+      "category": "Friends",
+      "main": "Omal",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Sona", "Namitha", "Athira"],
+      "hard": ["Ashitha", "Hira", "Farha", "Mariya"]
+    },
+    {
+      "category": "Friends",
+      "main": "Sona",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Omal", "Mariya", "Farha"],
+      "hard": ["Namitha", "Athira", "Ashitha", "Hira"]
+    },
+    {
+      "category": "Friends",
+      "main": "Hira",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Ashitha", "Athira", "Namitha"],
+      "hard": ["Omal", "Sona", "Farha", "Mariya"]
+    },
+    {
+      "category": "Friends",
+      "main": "Farha",
+      "easy": ["Friend", "Girl", "Person"],
+      "medium": ["Hira", "Sona", "Mariya"],
+      "hard": ["Namitha", "Athira", "Ashitha", "Omal"]
     }
   ]
 }
